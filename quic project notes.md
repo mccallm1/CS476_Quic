@@ -1,18 +1,18 @@
 
 There are two versions of QUIC: the Google version and the IETF.
 
-Google worked on their own implimentation, which is currently in use in the Chrome Browser.  It is imcompatible with the IETF standard, and as such I don't think we should use it.
+Google worked on their own implementation, which is currently in use in the Chrome Browser.  It is incompatible with the IETF standard, and as such I don't think we should use it.
 
-If we changed our testing plan to compare implimentations of the protocol to each other, then it might be useful.
-As of now, 
+If we changed our testing plan to compare implementations of the protocol to each other, then it might be useful.
+As of now,
 
 To make things more complicated, there are really two types of QUIC: QUIC as a transmission protocol, and HTTP-Over-Quic
 
-# Implimentations to use
+# Implementations to use
 There are quite a few.  
-The ones I think we should focus on testing are the IETF implimentations, though it may be useful to compare the IETF implimentation to the google gQUIC.
+The ones I think we should focus on testing are the IETF implementations, though it may be useful to compare the IETF implementation to the google gQUIC.
 If we are testing one IETF version, then it doesn't matter what draft version of the protocol we use, though I think later might be better.
-Wehn choosing an implimentation, it is important that it contains both a client and server.  
+When choosing an implementation, it is important that it contains both a client and server.  
 Also including a library might also be useful if we want to take advantage of it.
 
 
@@ -24,7 +24,7 @@ Also including a library might also be useful if we want to take advantage of it
 |quant|18|Server/Client/Library|C11||https://github.com/NTAP/quant|
 |quiche|17|Server/Client/Library|Rust||https://github.com/cloudflare/quiche|
 
-We will need to investigate each more before choosing an implimentation.
+We will need to investigate each more before choosing an implementation.
 
 
 
@@ -33,13 +33,13 @@ The reference for this list is located here: https://github.com/quicwg/base-draf
 
 ## Wireshark
 We can use wireshark to measure and record transmissions so we can look at them later.
-In order to use wireshark, we will need to match the writeshark version to the QUIC draft version of the implimentation we're using.
+In order to use wireshark, we will need to match the wireshark version to the QUIC draft version of the implementation we're using.
 
 Version requirements are detailed here: https://github.com/quicwg/base-drafts/wiki/Tools
 
 ## Quic Tracker
 Instead of making test ourselves, it may also be useful to use this tool.
-It is currently used to test the implimnetations of quic.
+It is currently used to test the implementations of quic.
 It can be compiled as a docker container, making it portable and easy to use.
 
 The code for it is located here: https://github.com/QUIC-Tracker/quic-tracker
@@ -59,5 +59,3 @@ This may be the most useful tool, as it is used to monitor traffic latency passi
 It doesn't monitor content, just information like round trip times etc.  It supports both TCP and QUIC, so we could easily get similar measurements for both protocols.
 
 https://github.com/EricssonResearch/spindump
-
-
